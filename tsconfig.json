@@ -9,6 +9,24 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "paths": {
+      "lib-biz-shared": [
+        "dist/lib-biz-shared/lib-biz-shared",
+        "dist/lib-biz-shared"
+      ],
+      "lib-core-shared": [
+        "dist/lib-core-shared/lib-core-shared",
+        "dist/lib-core-shared"
+      ],
+      "lib-persistency-shared": [
+        "dist/lib-persistency-shared/lib-persistency-shared",
+        "dist/lib-persistency-shared"
+      ],
+      "lib-ui-shared": [
+        "dist/lib-ui-shared/lib-ui-shared",
+        "dist/lib-ui-shared"
+      ]
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,

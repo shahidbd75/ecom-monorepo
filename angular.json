@@ -3,5 +3,1160 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "ecom-product": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/ecom-product",
+      "sourceRoot": "projects/ecom-product/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ecom-product",
+            "index": "projects/ecom-product/src/index.html",
+            "main": "projects/ecom-product/src/main.ts",
+            "polyfills": "projects/ecom-product/src/polyfills.ts",
+            "tsConfig": "projects/ecom-product/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ecom-product/src/favicon.ico",
+              "projects/ecom-product/src/assets"
+            ],
+            "styles": [
+              "projects/ecom-product/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ecom-product/src/environments/environment.ts",
+                  "with": "projects/ecom-product/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ecom-product:build:production"
+            },
+            "development": {
+              "browserTarget": "ecom-product:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ecom-product:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ecom-product/src/test.ts",
+            "polyfills": "projects/ecom-product/src/polyfills.ts",
+            "tsConfig": "projects/ecom-product/tsconfig.spec.json",
+            "karmaConfig": "projects/ecom-product/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ecom-product/src/favicon.ico",
+              "projects/ecom-product/src/assets"
+            ],
+            "styles": [
+              "projects/ecom-product/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "ecom-order": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/ecom-order",
+      "sourceRoot": "projects/ecom-order/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ecom-order",
+            "index": "projects/ecom-order/src/index.html",
+            "main": "projects/ecom-order/src/main.ts",
+            "polyfills": "projects/ecom-order/src/polyfills.ts",
+            "tsConfig": "projects/ecom-order/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ecom-order/src/favicon.ico",
+              "projects/ecom-order/src/assets"
+            ],
+            "styles": [
+              "projects/ecom-order/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ecom-order/src/environments/environment.ts",
+                  "with": "projects/ecom-order/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ecom-order:build:production"
+            },
+            "development": {
+              "browserTarget": "ecom-order:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ecom-order:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ecom-order/src/test.ts",
+            "polyfills": "projects/ecom-order/src/polyfills.ts",
+            "tsConfig": "projects/ecom-order/tsconfig.spec.json",
+            "karmaConfig": "projects/ecom-order/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ecom-order/src/favicon.ico",
+              "projects/ecom-order/src/assets"
+            ],
+            "styles": [
+              "projects/ecom-order/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "ecom-payment": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/ecom-payment",
+      "sourceRoot": "projects/ecom-payment/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ecom-payment",
+            "index": "projects/ecom-payment/src/index.html",
+            "main": "projects/ecom-payment/src/main.ts",
+            "polyfills": "projects/ecom-payment/src/polyfills.ts",
+            "tsConfig": "projects/ecom-payment/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ecom-payment/src/favicon.ico",
+              "projects/ecom-payment/src/assets"
+            ],
+            "styles": [
+              "projects/ecom-payment/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ecom-payment/src/environments/environment.ts",
+                  "with": "projects/ecom-payment/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ecom-payment:build:production"
+            },
+            "development": {
+              "browserTarget": "ecom-payment:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ecom-payment:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ecom-payment/src/test.ts",
+            "polyfills": "projects/ecom-payment/src/polyfills.ts",
+            "tsConfig": "projects/ecom-payment/tsconfig.spec.json",
+            "karmaConfig": "projects/ecom-payment/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ecom-payment/src/favicon.ico",
+              "projects/ecom-payment/src/assets"
+            ],
+            "styles": [
+              "projects/ecom-payment/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "ecom-user": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/ecom-user",
+      "sourceRoot": "projects/ecom-user/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ecom-user",
+            "index": "projects/ecom-user/src/index.html",
+            "main": "projects/ecom-user/src/main.ts",
+            "polyfills": "projects/ecom-user/src/polyfills.ts",
+            "tsConfig": "projects/ecom-user/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ecom-user/src/favicon.ico",
+              "projects/ecom-user/src/assets"
+            ],
+            "styles": [
+              "projects/ecom-user/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ecom-user/src/environments/environment.ts",
+                  "with": "projects/ecom-user/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ecom-user:build:production"
+            },
+            "development": {
+              "browserTarget": "ecom-user:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ecom-user:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ecom-user/src/test.ts",
+            "polyfills": "projects/ecom-user/src/polyfills.ts",
+            "tsConfig": "projects/ecom-user/tsconfig.spec.json",
+            "karmaConfig": "projects/ecom-user/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ecom-user/src/favicon.ico",
+              "projects/ecom-user/src/assets"
+            ],
+            "styles": [
+              "projects/ecom-user/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "ecom-inventory": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/ecom-inventory",
+      "sourceRoot": "projects/ecom-inventory/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ecom-inventory",
+            "index": "projects/ecom-inventory/src/index.html",
+            "main": "projects/ecom-inventory/src/main.ts",
+            "polyfills": "projects/ecom-inventory/src/polyfills.ts",
+            "tsConfig": "projects/ecom-inventory/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ecom-inventory/src/favicon.ico",
+              "projects/ecom-inventory/src/assets"
+            ],
+            "styles": [
+              "projects/ecom-inventory/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ecom-inventory/src/environments/environment.ts",
+                  "with": "projects/ecom-inventory/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ecom-inventory:build:production"
+            },
+            "development": {
+              "browserTarget": "ecom-inventory:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ecom-inventory:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ecom-inventory/src/test.ts",
+            "polyfills": "projects/ecom-inventory/src/polyfills.ts",
+            "tsConfig": "projects/ecom-inventory/tsconfig.spec.json",
+            "karmaConfig": "projects/ecom-inventory/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ecom-inventory/src/favicon.ico",
+              "projects/ecom-inventory/src/assets"
+            ],
+            "styles": [
+              "projects/ecom-inventory/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "ecom-price": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/ecom-price",
+      "sourceRoot": "projects/ecom-price/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ecom-price",
+            "index": "projects/ecom-price/src/index.html",
+            "main": "projects/ecom-price/src/main.ts",
+            "polyfills": "projects/ecom-price/src/polyfills.ts",
+            "tsConfig": "projects/ecom-price/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ecom-price/src/favicon.ico",
+              "projects/ecom-price/src/assets"
+            ],
+            "styles": [
+              "projects/ecom-price/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ecom-price/src/environments/environment.ts",
+                  "with": "projects/ecom-price/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ecom-price:build:production"
+            },
+            "development": {
+              "browserTarget": "ecom-price:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ecom-price:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ecom-price/src/test.ts",
+            "polyfills": "projects/ecom-price/src/polyfills.ts",
+            "tsConfig": "projects/ecom-price/tsconfig.spec.json",
+            "karmaConfig": "projects/ecom-price/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ecom-price/src/favicon.ico",
+              "projects/ecom-price/src/assets"
+            ],
+            "styles": [
+              "projects/ecom-price/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "ecom-delivery": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/ecom-delivery",
+      "sourceRoot": "projects/ecom-delivery/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ecom-delivery",
+            "index": "projects/ecom-delivery/src/index.html",
+            "main": "projects/ecom-delivery/src/main.ts",
+            "polyfills": "projects/ecom-delivery/src/polyfills.ts",
+            "tsConfig": "projects/ecom-delivery/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ecom-delivery/src/favicon.ico",
+              "projects/ecom-delivery/src/assets"
+            ],
+            "styles": [
+              "projects/ecom-delivery/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ecom-delivery/src/environments/environment.ts",
+                  "with": "projects/ecom-delivery/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ecom-delivery:build:production"
+            },
+            "development": {
+              "browserTarget": "ecom-delivery:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ecom-delivery:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ecom-delivery/src/test.ts",
+            "polyfills": "projects/ecom-delivery/src/polyfills.ts",
+            "tsConfig": "projects/ecom-delivery/tsconfig.spec.json",
+            "karmaConfig": "projects/ecom-delivery/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ecom-delivery/src/favicon.ico",
+              "projects/ecom-delivery/src/assets"
+            ],
+            "styles": [
+              "projects/ecom-delivery/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "ecom-supply": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/ecom-supply",
+      "sourceRoot": "projects/ecom-supply/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ecom-supply",
+            "index": "projects/ecom-supply/src/index.html",
+            "main": "projects/ecom-supply/src/main.ts",
+            "polyfills": "projects/ecom-supply/src/polyfills.ts",
+            "tsConfig": "projects/ecom-supply/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ecom-supply/src/favicon.ico",
+              "projects/ecom-supply/src/assets"
+            ],
+            "styles": [
+              "projects/ecom-supply/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ecom-supply/src/environments/environment.ts",
+                  "with": "projects/ecom-supply/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ecom-supply:build:production"
+            },
+            "development": {
+              "browserTarget": "ecom-supply:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ecom-supply:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ecom-supply/src/test.ts",
+            "polyfills": "projects/ecom-supply/src/polyfills.ts",
+            "tsConfig": "projects/ecom-supply/tsconfig.spec.json",
+            "karmaConfig": "projects/ecom-supply/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ecom-supply/src/favicon.ico",
+              "projects/ecom-supply/src/assets"
+            ],
+            "styles": [
+              "projects/ecom-supply/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "lib-biz-shared": {
+      "projectType": "library",
+      "root": "projects/lib-biz-shared",
+      "sourceRoot": "projects/lib-biz-shared/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/lib-biz-shared/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/lib-biz-shared/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/lib-biz-shared/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/lib-biz-shared/src/test.ts",
+            "tsConfig": "projects/lib-biz-shared/tsconfig.spec.json",
+            "karmaConfig": "projects/lib-biz-shared/karma.conf.js"
+          }
+        }
+      }
+    },
+    "lib-UI-shared": {
+      "projectType": "library",
+      "root": "projects/lib-ui-shared",
+      "sourceRoot": "projects/lib-ui-shared/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/lib-ui-shared/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/lib-ui-shared/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/lib-ui-shared/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/lib-ui-shared/src/test.ts",
+            "tsConfig": "projects/lib-ui-shared/tsconfig.spec.json",
+            "karmaConfig": "projects/lib-ui-shared/karma.conf.js"
+          }
+        }
+      }
+    },
+    "lib-core-shared": {
+      "projectType": "library",
+      "root": "projects/lib-core-shared",
+      "sourceRoot": "projects/lib-core-shared/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/lib-core-shared/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/lib-core-shared/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/lib-core-shared/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/lib-core-shared/src/test.ts",
+            "tsConfig": "projects/lib-core-shared/tsconfig.spec.json",
+            "karmaConfig": "projects/lib-core-shared/karma.conf.js"
+          }
+        }
+      }
+    },
+    "lib-persistency-shared": {
+      "projectType": "library",
+      "root": "projects/lib-persistency-shared",
+      "sourceRoot": "projects/lib-persistency-shared/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/lib-persistency-shared/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/lib-persistency-shared/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/lib-persistency-shared/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/lib-persistency-shared/src/test.ts",
+            "tsConfig": "projects/lib-persistency-shared/tsconfig.spec.json",
+            "karmaConfig": "projects/lib-persistency-shared/karma.conf.js"
+          }
+        }
+      }
+    },
+    "ecom-storefront": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/ecom-storefront",
+      "sourceRoot": "projects/ecom-storefront/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ecom-storefront",
+            "index": "projects/ecom-storefront/src/index.html",
+            "main": "projects/ecom-storefront/src/main.ts",
+            "polyfills": "projects/ecom-storefront/src/polyfills.ts",
+            "tsConfig": "projects/ecom-storefront/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ecom-storefront/src/favicon.ico",
+              "projects/ecom-storefront/src/assets"
+            ],
+            "styles": [
+              "projects/ecom-storefront/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ecom-storefront/src/environments/environment.ts",
+                  "with": "projects/ecom-storefront/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ecom-storefront:build:production"
+            },
+            "development": {
+              "browserTarget": "ecom-storefront:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ecom-storefront:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ecom-storefront/src/test.ts",
+            "polyfills": "projects/ecom-storefront/src/polyfills.ts",
+            "tsConfig": "projects/ecom-storefront/tsconfig.spec.json",
+            "karmaConfig": "projects/ecom-storefront/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ecom-storefront/src/favicon.ico",
+              "projects/ecom-storefront/src/assets"
+            ],
+            "styles": [
+              "projects/ecom-storefront/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "ecom-admin": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/ecom-admin",
+      "sourceRoot": "projects/ecom-admin/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ecom-admin",
+            "index": "projects/ecom-admin/src/index.html",
+            "main": "projects/ecom-admin/src/main.ts",
+            "polyfills": "projects/ecom-admin/src/polyfills.ts",
+            "tsConfig": "projects/ecom-admin/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ecom-admin/src/favicon.ico",
+              "projects/ecom-admin/src/assets"
+            ],
+            "styles": [
+              "projects/ecom-admin/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/ecom-admin/src/environments/environment.ts",
+                  "with": "projects/ecom-admin/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ecom-admin:build:production"
+            },
+            "development": {
+              "browserTarget": "ecom-admin:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ecom-admin:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ecom-admin/src/test.ts",
+            "polyfills": "projects/ecom-admin/src/polyfills.ts",
+            "tsConfig": "projects/ecom-admin/tsconfig.spec.json",
+            "karmaConfig": "projects/ecom-admin/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/ecom-admin/src/favicon.ico",
+              "projects/ecom-admin/src/assets"
+            ],
+            "styles": [
+              "projects/ecom-admin/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ecom-product"
 }
