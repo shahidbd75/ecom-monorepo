@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LibUISharedComponent } from './lib-ui-shared.component';
+import { TopProductListComponent } from './top-product-list.component';
 
-describe('LibUISharedComponent', () => {
-  let component: LibUISharedComponent;
-  let fixture: ComponentFixture<LibUISharedComponent>;
+describe('TopProductListComponent', () => {
+  let component: TopProductListComponent;
+  let fixture: ComponentFixture<TopProductListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LibUISharedComponent ]
+      declarations: [ TopProductListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LibUISharedComponent);
+    fixture = TestBed.createComponent(TopProductListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

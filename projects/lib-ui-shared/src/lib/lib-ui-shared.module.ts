@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
-import { LibUISharedComponent } from './lib-ui-shared.component';
+import { IdentifierModule } from './features/identifier/identifier.module';
+import { MenuModule } from './features/menu/menu.module';
 
 
 
 @NgModule({
   declarations: [
-    LibUISharedComponent
   ],
   imports: [
+    IdentifierModule,
+    MenuModule
   ],
   exports: [
-    LibUISharedComponent
+    IdentifierModule,
+    MenuModule
   ]
 })
 export class LibUISharedModule { }
