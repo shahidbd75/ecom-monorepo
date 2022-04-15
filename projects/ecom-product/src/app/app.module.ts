@@ -3,16 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TopProductListComponent } from './pages/top-product-list/top-product-list.component';
 
+import { NewArrivalModule} from './pages/new-arrival';
+import { TopProductListModule } from './pages/top-product-list';
 @NgModule({
   declarations: [
     AppComponent,
-    TopProductListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NewArrivalModule,
+    TopProductListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

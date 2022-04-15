@@ -1,3 +1,4 @@
 import { IMenu } from './menu';
 import { MenuComponent } from './menu.component';
-export { MenuComponent, IMenu };
+import { MenuModule } from './menu.module';
+export { MenuComponent, IMenu, MenuModule };

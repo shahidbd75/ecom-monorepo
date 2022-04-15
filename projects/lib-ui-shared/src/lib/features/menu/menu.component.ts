@@ -8,13 +8,13 @@ import { IMenu } from './menu';
 })
 export class MenuComponent implements OnInit {
 
-  _menus:IMenu[] | undefined;
+  _menus: IMenu[] = [];
 
   @Input()
-  set menus(menu:IMenu[]){
-    this._menus=menu;
+  set menus(menu: IMenu[]) {
+    this._menus = menu;
   }
-  
+
   constructor() { }
 
   ngOnInit(): void {

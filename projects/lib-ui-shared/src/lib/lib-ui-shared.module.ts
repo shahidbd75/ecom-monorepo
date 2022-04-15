@@ -13,7 +13,7 @@ import { MenuModule } from './features/menu/menu.module';
   ],
   exports: [
     IdentifierModule,
-    MenuModule
+    MenuModule    
   ]
 })
 export class LibUISharedModule { }
