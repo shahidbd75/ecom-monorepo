@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IMenu } from 'projects/lib-ui-shared/src/lib/features/menu';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ecom-payment';
+  title = 'Payment Management';
+  menus: IMenu[] = [];
+  ngOnInit(): void {
+    this.menus = [
+      { path: "/pages/cash-on-delivery", name: "CashOn Delivery" } as IMenu,
+      { path: "/pages/card", name: "Card" } as IMenu,
+      { path: "/pages/mobile-banking", name: "Mobile Banking" } as IMenu,
+    ];
+  }
 }
