@@ -14,10 +14,10 @@ export class AppComponent implements OnInit{
     this._menu=[
       {path:"pages/top-selling-products", name:"Top Selling"} as IMenu,
       {path:"pages/new-arrival", name:"New Arrival Product"} as IMenu,
-      {path:"pages/beehive-green-happy", name:"Green-Happy"} as IMenu,
-      {path:"pages/beehive-green-cry", name:"Green-Happy"} as IMenu,
-      {path:"pages/beehive-blue-happy", name:"Blue-Happy"} as IMenu,
-      {path:"pages/beehive-blue-shock", name:"Blue-Shock"} as IMenu,
+      {path:"pages/order", name:"Order"} as IMenu,
+      {path:"pages/card", name:"Card"} as IMenu,
+      {path:"pages/user", name:"User"} as IMenu,
+      {path:"pages/return", name:"Return"} as IMenu,
     ];
   }
 }
