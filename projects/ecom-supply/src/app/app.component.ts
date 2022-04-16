@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IMenu } from 'projects/lib-ui-shared/src/lib/features/menu';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ecom-supply';
+  title = 'Supply Management';
+  menus: IMenu[] = [];
+  
+  ngOnInit(): void {
+    this.menus = [
+      { path: "/supply/supplier", name: "Supplier" } as IMenu,
+      { path: "/supply/distributor", name: "Distributor" } as IMenu
+    ];
+  }
 }

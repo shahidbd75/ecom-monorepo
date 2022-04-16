@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IMenu } from 'projects/lib-ui-shared/src/lib/features/menu';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ecom-user';
+  title = 'User Management';
+  menus: IMenu[] = [];
+  
+  ngOnInit(): void {
+    this.menus = [
+      { path: "/pages/user", name: "User Info" } as IMenu,
+      { path: "/pages/role", name: "User Role" } as IMenu
+    ];
+  }
 }
