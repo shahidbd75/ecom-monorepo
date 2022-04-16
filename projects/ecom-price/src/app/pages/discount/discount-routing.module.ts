@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DiscountComponent } from './discount.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', component: DiscountComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -1,7 +1,9 @@
 <nav>
-    <ul>
-        <li *ngFor="let menu of _menus">
-            <a [routerLink]="menu.path">{{menu.name}}</a>
-        </li>
-    </ul>
+    <button mat-button [matMenuTriggerFor]="menuItems">Menu</button>
+
+    <mat-menu #menuItems="matMenu">
+        <ng-container *ngFor="let menu of _menus">
+            <button mat-menu-item [routerLink]="menu.path">{{menu.name}}</button>
+        </ng-container>
+    </mat-menu>
 </nav>
